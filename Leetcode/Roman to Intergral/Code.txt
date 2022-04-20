@@ -1,0 +1,57 @@
+class Solution {
+    public int romanToInt(String s) {
+        
+        int out = 0;
+        
+        for(int i = 0; i < s.length(); i++){
+            
+            if(s.charAt(i) == 'I'){
+                out += 1;
+            }
+            
+            if(s.charAt(i) == 'V'){
+                out += 5;
+            }
+            
+            if(s.charAt(i) == 'X'){
+                out += 10;
+            }
+            
+             if(s.charAt(i) == 'L'){
+                out += 50;
+            }  
+            
+             if(s.charAt(i) == 'C'){
+                out += 100;
+            }  
+            
+            if(s.charAt(i) == 'D'){
+                out += 500;
+            }  
+            if(s.charAt(i) == 'M'){
+                out += 1000;
+            }  
+        }
+        
+        if(s.contains("IV"))
+            out -= 2;
+        
+        if(s.contains("IX"))
+            out -= 2;
+        
+        if(s.contains("XL"))
+            out -= 20;
+        
+        if(s.contains("XC"))
+            out -= 20;
+        
+        if(s.contains("CD"))
+            out -= 200;
+        
+        if(s.contains("CM"))
+            out -= 200;
+        
+        return out;
+        
+    }
+}
